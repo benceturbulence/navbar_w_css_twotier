@@ -14,132 +14,170 @@ body {
 header {
     position: fixed;
     top: 0; left:0;right:0;
-    background-color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.7);
     z-index: 999;
-    padding: 0 2rem;
-
 }
 
-header .logo {
-    font-weight: bolder;
-    font-size: 25px;
-    color: #333
-}
-
-header .navbar ul {
-    list-style: none;
-    display: flex;
-}
-
-header .navbar ul li {
-    position: relative;
-}
-
-
-
-header .navbar ul li label, 
-header .navbar ul li a {
-    font-size: 25px;
-    padding-left: 20px;
+.logo, .menu-bar {
     display: block;
-    padding: 2rem;
+}
+.logo,
+nav ul li {
+    padding: 1rem;
+    font-size: 1.4rem;
 }
 
-header .navbar ul li a:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-
-/* first level of dropdown */
-/* the whole list */
-
-header .navbar ul li ul {
-    flex-direction: column;
+.menu-bar {
+    height: 50px;
     position: absolute;
-    background-color: #fff;
-    left: 0;
-    width: 250px;
-    display: none;
-
+    align-items: center;
+    display: flex;
+    right: 1rem;
+    top: 0%;
+    width: 40px;
 }
 
-/* list element level */
-
-header .navbar ul li ul li {
+.menu-bar span {
+    height: 100%;
+    align-items: center;
+    position: relative;
+    height: 3px;
     width: 100%;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background-color: #333;
 }
 
-/* second level of dropdown */
-header .navbar ul li ul li ul {
-    left: 100%;
-    top: 0;
+.menu-bar span::before,
+.menu-bar span::after {
+    content: "";
+    height: 3px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+.menu-bar span::before {
+    position: absolute;
+    top:10px;
+}
+.menu-bar span::after {
+    position: absolute;
+    bottom: 10px;
+}
+nav {
+    text-align: center;
+    display: none;
+    position: relative;
+    top: 100%;    
+}
+
+#menu-bar:checked ~ nav {
+    display: block;
+    transition: display 1500ms ease-in;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+ul li,
+ul li ul li {
+    padding: .8rem;
+}
+
+ul li ul li:last-child{
+    padding-bottom: 0;
 }
 
 
-header .navbar ul li:focus-within > ul,
-header .navbar ul li:hover > ul{
-    display: initial;
+a {
+    text-decoration: none;
+    color: #333;
 }
 
-#menu-bar {
+/* Hide it */
+
+input {
     display: none;
 }
 
-header label .menu-bar {
+nav ul li ul {
     display: none;
-    cursor: pointer;
 }
 
-@media (max-width: 800px) {
+
+
+.accordeon input:checked ~ ul {
+    display: block;
+    transition: display 400ms ease-in-out;
+}
+
+
+/* Media */
+
+@media (min-width: 800px){
+
     header {
-        padding: 20px;
-    }
-    header label{
-        display: initial
+        display: flex;
+        padding: 0 2rem;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    header .navbar {
+    .menu-bar{
         display: none;
     }
-    
-    #menu-bar:checked ~ .navbar 
-    {
+
+    .logo,
+    nav ul li {
+        padding: 1rem;
+    }
+
+    nav {
         display: block;
     }
-    header .navbar {
+    
+    nav ul {
+        display: flex;
+    }
+
+    nav ul li {
+        
+        position: relative;
+    }
+
+
+
+    nav ul li a:hover,
+    nav ul li:hover {
+        background-color: #333;
+        color: #fff
+    }
+
+
+    
+    .navbar ul li:focus-within > ul,
+    .navbar ul li:hover > ul{
+        display: initial;
+    }
+
+    
+    nav ul li ul {
+        padding: 0;
         position: absolute;
         top: 100%;
+        background-color: pink;
         left: 0;
-        right: 0;
-        background-color: #fff;
+        width: 200px
     }
 
-    header .navbar ul {
-        flex-direction: column;
-    }
-    header .navbar ul li {
-        width: 100%;
-    }
-
-    header .navbar ul  li ul {
-        position: relative;
-        width: 100%;
-    }
-    
-    header .navbar ul li ul li {
-        background-color: #fff;
+    nav ul li ul li,
+    nav ul li ul li:last-child  {
+        padding: 1rem;
+        text-align: left;
     }
 
-    header .navbar ul li #dropdown_check:checked ~ ul {
-        display: block;
-    }
 
-    header .navbar ul li:hover {
-        all: unset;
-    }
+
+
 }

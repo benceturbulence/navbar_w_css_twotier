@@ -15,22 +15,38 @@
     <body>
     <header>
 
+        <label class = "menu-bar" for="menu-bar">
+            <span></span>
+        </label>
+        
         <a href="#" class = "logo">Logo</a>
         <input type="checkbox" id = "menu-bar">
-        <label class = "menu-bar" for="menu-bar">Menu</label>
         <nav class = "navbar">
             <ul>
-                <li><a href = "">Home</a></li>
-                <li>
-                    <input type="checkbox" id = "dropdown_check">
-                    <label class = "dropdown_check" for="dropdown_check">Services</label>
-                    <ul class = "dropdown">
-                        <li><a href="">Delivery</a></li>
-                        <li><a href="">Cooking class</a></li>
+                <li class = "accordeon">
+                    <a href="#">Home</a>
+                </li>
+
+                <li class = "accordeon">
+                    <input type="radio" name = "dropdown" id = "dropdown_1">
+                    <label for="dropdown_1">Menu 1</label>
+                    <ul class = "accordeon_2">
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">Option 2</a></li>
                     </ul>
                 </li>
-                <li><a href = "">Contact</a></li>
-                <li><a href = "">Login</a></li>
+
+                <li class = "accordeon">
+                    <input type="radio" name = "dropdown" id = "dropdown_2">
+                    <label for="dropdown_2">Menu_2</label>
+                    <ul class = "accordeon_2">
+                        <li><a href="#">Option 1</a></li>
+                        <li><a href="#">Option 2</a></li>
+                    </ul>
+                </li>
+                
+                <li><a href = "#">Login</a></li>
+
             </ul>
         </nav>
         
