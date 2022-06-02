@@ -1,13 +1,140 @@
 * {
-    padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: capitalize;
+    text-decoration: none;
 }
 
-nav {
+body {
+    min-height: 100vh;
+    background: url("img/bg.jpg");
+}
+
+header {
+    position: fixed;
+    top: 0; left:0;right:0;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999;
+    padding: 0 2rem;
+
+}
+
+header .logo {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #333
+}
+
+header .navbar ul {
+    list-style: none;
+    display: flex;
+}
+
+header .navbar ul li {
+    position: relative;
+}
+
+header .navbar ul li a {
+    font-size: 25px;
+    padding-left: 20px;
+    display: block;
+    padding: 2rem;
+}
+
+header .navbar ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+
+/* first level of dropdown */
+/* the whole list */
+
+header .navbar ul li ul {
+    flex-direction: column;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    width: 250px;
+    display: none;
+
+}
+
+/* list element level */
+
+header .navbar ul li ul li {
+    width: 100%;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* second level of dropdown */
+header .navbar ul li ul li ul {
+    left: 100%;
+    top: 0;
+}
+
+
+header .navbar ul li:focus-within > ul,
+header .navbar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar {
     display: none;
 }
 
-#menu:checked ~ nav {
-    display: block;
+header label {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 20px;
+    }
+    header label{
+        display: initial
+    }
+
+    header .navbar {
+        display: none;
+    }
+    
+    #menu-bar:checked ~ .navbar 
+    {
+        display: block;
+    }
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+    }
+
+    header .navbar ul {
+        flex-direction: column;
+    }
+    header .navbar ul li {
+        width: 100%;
+    }
+
+    header .navbar ul  li ul {
+        position: relative;
+        width: 100%;
+    }
+    
+    header .navbar ul li ul li {
+        background-color: #fff;
+    }
+
+    header .navbar ul  li ul li ul{
+        position: relative;
+        width: 100%;
+        left: 0
+    }
 }
