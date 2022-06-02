@@ -17,20 +17,17 @@
 
         <a href="#" class = "logo">Logo</a>
         <input type="checkbox" id = "menu-bar">
-        <label for="menu-bar">Menu</label>
+        <label class = "menu-bar" for="menu-bar">Menu</label>
         <nav class = "navbar">
             <ul>
                 <li><a href = "">Home</a></li>
-                <li><a href = "">Services</a>
-                <ul class = "dropdown">
-                    <li><a href="">Delivery</a></li>
-                    <li><a href="">Cooking class</a>
-                    <ul class = "dropdown_2">
-                        <li><a href="">Fondu</a></li>
-                        <li><a href="">Asian cusine</a></li>
-                    </ul></li>
-                </ul>
-                
+                <li>
+                    <input type="checkbox" id = "dropdown_check">
+                    <label class = "dropdown_check" for="dropdown_check">Services</label>
+                    <ul class = "dropdown">
+                        <li><a href="">Delivery</a></li>
+                        <li><a href="">Cooking class</a></li>
+                    </ul>
                 </li>
                 <li><a href = "">Contact</a></li>
                 <li><a href = "">Login</a></li>

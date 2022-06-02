@@ -38,6 +38,9 @@ header .navbar ul li {
     position: relative;
 }
 
+
+
+header .navbar ul li label, 
 header .navbar ul li a {
     font-size: 25px;
     padding-left: 20px;
@@ -87,7 +90,7 @@ header .navbar ul li:hover > ul{
     display: none;
 }
 
-header label {
+header label .menu-bar {
     display: none;
     cursor: pointer;
 }
@@ -132,9 +135,11 @@ header label {
         background-color: #fff;
     }
 
-    header .navbar ul  li ul li ul{
-        position: relative;
-        width: 100%;
-        left: 0
+    header .navbar ul li #dropdown_check:checked ~ ul {
+        display: block;
+    }
+
+    header .navbar ul li:hover {
+        all: unset;
     }
 }
