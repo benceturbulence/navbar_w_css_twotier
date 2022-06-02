@@ -1,8 +1,6 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
     text-decoration: none;
 }
 
@@ -11,9 +9,9 @@ body {
     background: url("img/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: thin;
 }
 
 header {
