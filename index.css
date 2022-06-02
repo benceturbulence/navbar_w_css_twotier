@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-transform: capitalize;
+    
     text-decoration: none;
 }
 
@@ -11,6 +11,9 @@ body {
     background: url("img/bg.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    font-family: 'Arial', sans-serif;
+    text-transform: uppercase;
+    font-weight: lighter;
 }
 
 header {
@@ -31,6 +34,7 @@ nav ul li {
 }
 
 /* Hamburger menu */
+
 .menu-bar {
     height: 50px;
     position: absolute;
@@ -72,6 +76,7 @@ nav ul li {
 
 
 /* Animation */
+
 nav {
     text-align: center;
     position: relative;
@@ -173,27 +178,20 @@ nav ul li:hover a {
 
     nav {
         display: block;
-    }
+        height: auto;
+        transform: scale(1,1);
+}
 
     nav ul {
         display: flex;
-    }
-   
-    nav ul li:hover,
-    nav ul li:hover >a {
-        background-color: rgba(51, 51, 51, 0.7);
-        color: #fff
-    }
-    
-    .navbar ul li:focus-within > ul,
-    .navbar ul li:hover > ul{
-        display: initial;
+        opacity: 1;
     }
     
     nav ul li {
         position: relative;
+        cursor: pointer;
     }
-    
+
     nav ul li ul {
         position: absolute;
         padding: 0;
@@ -202,14 +200,38 @@ nav ul li:hover a {
         width: 200px
     }
 
+    nav ul li ul li {
+        background-color: rgba(255, 255, 255, 0.7);
+    }
+    .navbar ul li ul li a {
+        color: rgba(51, 51, 51, 1);
+    }
+
     nav ul li ul li,
     nav ul li ul li:last-child  {
         padding: 1rem;
         text-align: left;
-        background-color: rgba(255, 255, 255, 0.7);
+        
+    }
+    
+    .navbar ul li:focus-within > ul,
+    .navbar ul li:hover > ul{
+        display: initial;
+    }
+    
+    nav ul li:hover,
+    nav ul li ul li:hover {
+        background-color: rgba(51, 51, 51, 0.7);
+        color: #fff
+    }
+    
+    nav ul li ul li:hover a {
+        color: #fff
+    }
+
+    
+
+
     }
 
 
-
-
-}
